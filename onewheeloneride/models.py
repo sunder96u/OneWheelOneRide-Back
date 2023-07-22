@@ -17,25 +17,17 @@ class User(models.Model):
     
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
-    fender = models.IntegerField
-    handle = models.IntegerField
-    footpad = models.IntegerField
-    tire = models.IntegerField
-    rail = models.IntegerField
-    bumper = models.IntegerField
-    stand = models.IntegerField
+    name = models.CharField(max_length=100, default='OneWheel')
 
     def __str__(self):
-        return self.fender
+        return self.name
     
 class Model(models.Model):
     id = models.AutoField(primary_key=True)
-    xr = models.IntegerField
-    gt = models.IntegerField
-    pint = models.IntegerField
+    name = models.CharField(max_length=100, default='OneWheel')
 
     def __str__(self):
-        return self.xr
+        return self.name
         
 class Product(models.Model):
     id = models.AutoField(primary_key=True)
