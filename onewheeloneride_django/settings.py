@@ -97,6 +97,8 @@ DATABASES = {
 
 }
 
+CORS_ALLOW_ALL_ORIGIN = True
+
 CSRF_TRUSTED_ORIGINS = [
     'http://otto.db.elephantsql.com',
     'http://localhost:5173'
