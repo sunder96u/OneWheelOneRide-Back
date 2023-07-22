@@ -94,7 +94,7 @@ DATABASES = {
 
 }
 
-CSRD_TRUSTED_ORIGINS = [
+CSRF_TRUSTED_ORIGINS = [
     'http://otto.db.elephantsql.com',
     'http://localhost:5173'
     'https://onewheeloneride-back.up.railway.app/'
