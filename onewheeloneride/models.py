@@ -33,9 +33,9 @@ class Product(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     picture = models.CharField(max_length=100)
-    qantity = models.IntegerField
-    description = models.TextField
-    price = models.IntegerField
+    qantity = models.IntegerField(default=1)
+    description = models.TextField(default='No Description Given')
+    price = models.IntegerField(default=0)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     model_id = models.ForeignKey(Model, on_delete=models.CASCADE)
 
@@ -47,7 +47,7 @@ class Trail(models.Model):
     name = models.CharField(max_length=100)
     picture = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
-    difficulty = models.IntegerField
+    difficulty = models.IntegerField(default=1)
 
     def __str__(self):
         return self.name
@@ -56,8 +56,8 @@ class ProductReview(models.Model):
     id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
-    rating = models.IntegerField
-    review = models.TextField
+    rating = models.IntegerField(default=5)
+    review = models.TextField(default='No Review Given')
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -67,8 +67,8 @@ class TrailReview(models.Model):
     id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     trail_id = models.ForeignKey(Trail, on_delete=models.CASCADE)
-    rating = models.IntegerField
-    review = models.TextField
+    rating = models.IntegerField(default=5)
+    review = models.TextField(default='No Review Given')
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -79,9 +79,9 @@ class Cart(models.Model):
     name = models.CharField(max_length=100)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    quantity = models.IntegerField
-    total = models.IntegerField
-    subtotal = models.IntegerField
+    quantity = models.IntegerField(default=1)
+    total = models.IntegerField(default=0)
+    subtotal = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -90,7 +90,7 @@ class Group(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     picture = models.CharField(max_length=100)
-    description = models.TextField
+    description = models.TextField(default='No Description Given')
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -100,7 +100,7 @@ class Comment(models.Model):
     id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     group_id = models.ForeignKey(Group, on_delete=models.CASCADE)
-    comment = models.TextField
+    comment = models.TextField(default='No Comment Given')
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

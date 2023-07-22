@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from .models import User, Category, Model, Product, Trail, ProductReview, TrailReview, Cart, Group, Comment
 
 # Register your models here.
 admin.site.register(User)
