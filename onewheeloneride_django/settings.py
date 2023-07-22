@@ -101,9 +101,9 @@ CORS_ALLOW_ALL_ORIGIN = True
 
 CSRF_TRUSTED_ORIGINS = [
     'http://otto.db.elephantsql.com',
-    'http://localhost:5173'
-    'https://onewheeloneride-back.up.railway.app/'
-    'https://onewheeloneride-back.up.railway.app'
+    'http://localhost:5173',
+    'https://onewheeloneride-back.up.railway.app/',
+    'https://onewheeloneride-back.up.railway.app',
 ]
 
 # CORS_ALLOWED_ORIGINS = [
