@@ -13,7 +13,7 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class ProductList(generics.ListAPIView):
     queryset = Product.objects.all()
-    serializers_class = ProductSerializer
+    serializer_class = ProductSerializer
 
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
@@ -21,7 +21,7 @@ class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class ProductReviewList(generics.ListAPIView):
     queryset = ProductReview.objects.all()
-    serializers_class = ProductReviewSerializer
+    serializer_class = ProductReviewSerializer
 
 class ProductReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = ProductReview.objects.all()
