@@ -35,7 +35,7 @@ class Product(models.Model):
     picture = models.CharField(max_length=100)
     qantity = models.IntegerField(default=1)
     description = models.TextField(default='No Description Given')
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     model_id = models.ForeignKey(Model, on_delete=models.CASCADE)
 
