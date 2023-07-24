@@ -32,7 +32,7 @@ class Model(models.Model):
 class Product(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    picture = models.CharField(max_length=100)
+    picture = models.CharField(max_length=250)
     qantity = models.IntegerField(default=1)
     description = models.TextField(default='No Description Given')
     price = models.FloatField(default=0)
