@@ -29,7 +29,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'users')
+        fields = ('id', 'firstname', 'lastname', 'email', 'users')
           
 class TrailReviewSerializer(serializers.HyperlinkedModelSerializer):
     review = serializers.HyperlinkedRelatedField(
