@@ -86,7 +86,7 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
     Model = ModelSerializer()
     class Meta:
         model = Product
-        fields = ('id', 'name', 'price', 'description', 'picture', 'products', 'Category', 'Model')
+        fields = ('id', 'name', 'price', 'description', 'picture', 'product', 'Category', 'Model')
 
 class ProductReviewSerializer(serializers.HyperlinkedModelSerializer):
     review = serializers.HyperlinkedRelatedField(
