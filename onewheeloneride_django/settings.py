@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'onewheeloneride',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -179,6 +179,10 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 SITE_ID = 1
 
