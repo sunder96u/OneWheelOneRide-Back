@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'onewheeloneride',
     'rest_framework',
     'corsheaders'
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
