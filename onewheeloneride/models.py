@@ -90,7 +90,7 @@ class Group(models.Model):
     name = models.CharField(max_length=100)
     picture = models.CharField(max_length=250)
     description = models.TextField(default='No Description Given')
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ManyToManyField('self', through='User')
 
     def __str__(self):
         return self.name
