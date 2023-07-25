@@ -8,7 +8,7 @@ class User(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
-    profile_picture = models.CharField(max_length=100)
+    profile_picture = models.CharField(max_length=250)
     phone_number = models.CharField(max_length=100)
 
     def __str__(self):
@@ -44,7 +44,7 @@ class Product(models.Model):
 class Trail(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    picture = models.CharField(max_length=100)
+    picture = models.CharField(max_length=250)
     address = models.CharField(max_length=100)
     difficulty = models.IntegerField(default=1)
 
@@ -88,7 +88,7 @@ class Cart(models.Model):
 class Group(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    picture = models.CharField(max_length=100)
+    picture = models.CharField(max_length=250)
     description = models.TextField(default='No Description Given')
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
