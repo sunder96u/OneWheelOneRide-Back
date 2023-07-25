@@ -82,8 +82,8 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'name', 'description', 'picture', 'group')
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
-    category = CategorySerializer()
-    model = ModelSerializer()
+    Category = CategorySerializer()
+    Model = ModelSerializer()
     class Meta:
         model = Product
         fields = ('id', 'name', 'price', 'description', 'picture', 'products', 'Category', 'Model')
