@@ -16,5 +16,6 @@ urlpatterns = [
     path('comments/<int:pk>', views.CommentDetail.as_view(), name='comment_detail'),
     path('users', views.UserList.as_view(), name='user_list'),
     path('users/<int:pk>', views.UserDetail.as_view(), name='user_detail'),
+    
 
 ]
