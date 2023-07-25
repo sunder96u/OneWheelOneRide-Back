@@ -93,9 +93,9 @@ DATABASES = {
     # }
         'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'aewqguni',
-        'USER': 'aewqguni',
-        'PASSWORD': 'YXO8bg_6s3QkQfphJ5b2KKRyt3uFlPH8',
+        'NAME': 'kbfgtlqs',
+        'USER': 'kbfgtlqs',
+        'PASSWORD': 'dwNrDkVIa8l_XZyt5wCe3D7JnDMqQrTU',
         'HOST': 'otto.db.elephantsql.com'
     }
 
