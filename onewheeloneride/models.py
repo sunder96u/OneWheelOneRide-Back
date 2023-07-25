@@ -9,7 +9,6 @@ class User(models.Model):
     last_name = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
     profile_picture = models.CharField(max_length=100)
-    gender = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=100)
 
     def __str__(self):
