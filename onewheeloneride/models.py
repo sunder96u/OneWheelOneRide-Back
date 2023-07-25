@@ -4,15 +4,13 @@ from django.db import models
 class User(models.Model):
     id = models.AutoField(primary_key=True)
     email = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
     profile_picture = models.CharField(max_length=250)
-    phone_number = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return self.email
     
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
