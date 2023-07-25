@@ -82,19 +82,8 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'name', 'description', 'picture', 'group')
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
-    products = serializers.HyperlinkedRelatedField(
-        many=True, 
-        read_only=True, 
-        view_name='products_detail'
-    )
-    Category = serializers.PrimaryKeyRelatedField(
-        queryset=Category.objects.all(),
-        required=False
-    )
-    Model = serializers.PrimaryKeyRelatedField(
-            queryset=Model.objects.all(),
-            required=False
-    )
+    category = CategorySerializer()
+    model = ModelSerializer()
     class Meta:
         model = Product
         fields = ('id', 'name', 'price', 'description', 'picture', 'products', 'Category', 'Model')
