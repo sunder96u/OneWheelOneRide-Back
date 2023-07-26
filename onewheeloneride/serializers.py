@@ -30,6 +30,16 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'first_name', 'last_name', 'email', 'users', 'password')
+
+class LoginSerializer(serializers.HyperlinkedModelSerializer):
+    user = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='login'
+    )
+    class Meta:
+        models = User
+        fields = ('id','email', 'users')
           
 class TrailReviewSerializer(serializers.HyperlinkedModelSerializer):
     review = serializers.HyperlinkedRelatedField(

@@ -11,6 +11,11 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+class LoginView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializers_class = LoginSerializer
+
+
 class ProductList(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
