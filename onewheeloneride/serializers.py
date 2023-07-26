@@ -111,29 +111,29 @@ class GroupIdSerializer(serializers.HyperlinkedModelSerializer):
             fields = ('id', 'group')
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
-    category_id = CategorySerializer()
-    model_id = ModelSerializer()
+    category = CategorySerializer()
+    model = ModelSerializer()
     class Meta:
         model = Product
-        fields = ('id', 'name', 'price', 'description', 'picture', 'category_id', 'model_id')
+        fields = ('id', 'name', 'price', 'description', 'picture', 'category', 'model')
 
 class ProductReviewSerializer(serializers.HyperlinkedModelSerializer):
-    product_id = ProductIdSerializer()
-    user_id = UserIdSerializer()
+    product = ProductIdSerializer()
+    user = UserIdSerializer()
     class Meta:
         model = ProductReview
-        fields = ('id', 'rating', 'review', 'user_id', 'product_id')
+        fields = ('id', 'rating', 'review', 'user', 'product')
 
 class TrailReviewSerializer(serializers.HyperlinkedModelSerializer):
-    trail_id = TrailIdSerializer()
-    user_id = UserIdSerializer()
+    trail = TrailIdSerializer()
+    user = UserIdSerializer()
     class Meta:
         model = TrailReview
-        fields = ('id', 'rating','review', 'user_id', 'trail_id')
+        fields = ('id', 'rating','review', 'user', 'trail')
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
-    group_id = GroupIdSerializer()
-    user_id = UserIdSerializer()
+    group = GroupIdSerializer()
+    user = UserIdSerializer()
     class Meta:
         model = Comment
-        fields = ('id', 'date', 'comment', 'user_id', 'group_id')
+        fields = ('id', 'date', 'comment', 'user', 'group')
