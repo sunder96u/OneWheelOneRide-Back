@@ -94,7 +94,6 @@ class TrailReviewSerializer(serializers.HyperlinkedModelSerializer):
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
     group_id = GroupSerializer()
     user_id = UserSerializer()
-    )
     class Meta:
         model = Comment
         fields = ('id', 'date', 'comment', 'user_id', 'group_id')
