@@ -90,7 +90,11 @@ class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class CreateGroup(generics.CreateAPIView):
     queryset = Group.objects.all()
-    serializers_class = GroupSerializer
+    serializer_class = GroupSerializer
+
+class CreateTrail(generics.CreateAPIView):
+    queryset = Trail.objects.all()
+    serializer_class = TrailSerializer
 
 # class UserLogin(generics.CreateAPIView):
 #     queryset = User.objects.all()

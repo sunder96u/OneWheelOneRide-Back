@@ -55,7 +55,7 @@ class TrailReviewSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = TrailReview
-        fields = ('id', 'rating','review', 'user')
+        fields = ('id', 'rating','review', 'user_id', 'trail_id')
 
 class TrailSerializer(serializers.HyperlinkedModelSerializer):
     trail = serializers.HyperlinkedRelatedField(
@@ -85,7 +85,7 @@ class CommentSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Comment
-        fields = ('id', 'date', 'comment', 'trail')
+        fields = ('id', 'date', 'comment', 'user_id', 'group_id')
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     group = serializers.HyperlinkedRelatedField(
@@ -112,4 +112,4 @@ class ProductReviewSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = ProductReview
-        fields = ('id', 'rating', 'review', 'product')
+        fields = ('id', 'rating', 'review', 'user_id', 'product_id')
