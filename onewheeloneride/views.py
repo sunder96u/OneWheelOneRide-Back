@@ -11,14 +11,9 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-class UserCreate(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
 class Login(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = LoginSerializer
-
 
 class ProductList(generics.ListAPIView):
     queryset = Product.objects.all()
@@ -33,10 +28,6 @@ class ProductReviewList(generics.ListAPIView):
     serializer_class = ProductReviewSerializer
 
 class ProductReviewDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = ProductReview.objects.all()
-    serializer_class = ProductReviewSerializer
-
-class CreateProductReview(generics.CreateAPIView):
     queryset = ProductReview.objects.all()
     serializer_class = ProductReviewSerializer
 
@@ -56,10 +47,6 @@ class TrailReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = TrailReview.objects.all()
     serializer_class = TrailReviewSerializer
 
-class CreateTrailReview(generics.CreateAPIView):
-    queryset = TrailReview.objects.all()
-    serializer_class = TrailReviewSerializer
-
 class CartList(generics.ListAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
@@ -72,36 +59,32 @@ class CommentList(generics.ListAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
-class CreateComment(generics.CreateAPIView):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
-
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-
-class GroupList(generics.ListAPIView):
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
 
 class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
-class CreateGroup(generics.CreateAPIView):
+class GroupList(generics.ListAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
-class CreateTrail(generics.CreateAPIView):
-    queryset = Trail.objects.all()
-    serializer_class = TrailSerializer
+class UserCreate(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
-# class UserLogin(generics.CreateAPIView):
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
+class TrailReviewCreate(generics.CreateAPIView):
+    queryset = TrailReview.objects.all()
+    serializer_class = TrailReviewSerializer
 
-# class UserRegister(generics.CreateAPIView): 
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
+class ProductReviewCreate(generics.CreateAPIView):
+    queryset = ProductReview.objects.all()
+    serializer_class = ProductReviewSerializer
 
+class CommentCreate(generics.CreateAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    
 

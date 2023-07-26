@@ -19,12 +19,7 @@ urlpatterns = [
     path('users/<int:pk>', views.UserDetail.as_view(), name='user_detail'),
     path('login', views.Login.as_view(), name='login'),
     path('register', views.UserCreate.as_view(), name='register'),
-    path('CreateComment', views.CreateComment.as_view(), name='create_comment'),
-    path('CreateTrailReview', views.CreateTrailReview.as_view(), name='create_trail_review'),
-    path('CreateProductReview', views.CreateProductReview.as_view(), name='create_product_review'),
-    path('CreateGroup', views.CreateGroup.as_view(), name='create_group'),
-    path('CreateTrail', views.CreateTrail.as_view(), name='create_trail')
-
-    
-
+    path('createtrailreview', views.TrailReviewCreate.as_view(), name='trail_create'),
+    path('createproductreview', views.ProductReviewCreate.as_view(), name='product_review)'),
+    path('createcomment', views.CommentCreate.as_view(), name='comment_create'),
 ]
