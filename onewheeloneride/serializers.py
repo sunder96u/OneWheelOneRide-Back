@@ -38,7 +38,7 @@ class LoginSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = User
-        fields = ('id','email', 'password')
+        fields = ('id','email', 'users_id', 'password')
 
 # class ProductSerializer(serializers.HyperlinkedModelSerializer):
 #     category_id = CategorySerializer()
