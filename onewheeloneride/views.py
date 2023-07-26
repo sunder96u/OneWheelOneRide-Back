@@ -38,7 +38,7 @@ class ProductReviewDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class CreateProductReview(generics.CreateAPIView):
     queryset = ProductReview.objects.all()
-    serializers_class = ProductReviewSerializer
+    serializer_class = ProductReviewSerializer
 
 class Traillist(generics.ListAPIView):
     queryset = Trail.objects.all()
