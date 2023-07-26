@@ -13,7 +13,7 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class Login(generics.ListAPIView):
     queryset = User.objects.all()
-    serializers_class = LoginSerializer
+    serializer_class = LoginSerializer
 
 
 class ProductList(generics.ListAPIView):
