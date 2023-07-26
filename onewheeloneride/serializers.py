@@ -92,13 +92,10 @@ class TrailReviewSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'review', 'rating', 'user_id', 'trail_id')
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
-    comment = serializers.HyperlinkedRelatedField(
-        many=True, 
-        read_only=True, 
-        view_name='comment_detail'
-    )
+    user_id = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+    group_id = serializers.PrimaryKeyRelatedField(queryset=Group.objects.all())
     class Meta:
             model = Comment
-            fields = ('id', 'comment', 'rating', 'user_id', 'trail_id', 'product_id')
+            fields = ('id', 'comment', 'user_id', 'group_id')
 
 
