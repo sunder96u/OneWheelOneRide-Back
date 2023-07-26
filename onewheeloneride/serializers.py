@@ -40,18 +40,12 @@ class LoginSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ('id','email', 'users_id', 'password')
 
-# class ProductSerializer(serializers.HyperlinkedModelSerializer):
-#     category_id = CategorySerializer()
-#     model_id = ModelSerializer()
-#     class Meta:
-#         model = Product
-#         fields = ('id', 'name', 'price', 'description', 'picture', 'category_id', 'model_id')
           
 class TrailReviewSerializer(serializers.HyperlinkedModelSerializer):
     review = serializers.HyperlinkedRelatedField(
         many=True, 
         read_only=True, 
-        view_name='review_detail'
+        view_name='user-detail'
     )
     class Meta:
         model = TrailReview
@@ -81,7 +75,7 @@ class CommentSerializer(serializers.HyperlinkedModelSerializer):
     comment = serializers.HyperlinkedRelatedField(
         many=True, 
         read_only=True, 
-        view_name='comment_detail'
+        view_name='user-detail'
     )
     class Meta:
         model = Comment
@@ -108,7 +102,7 @@ class ProductReviewSerializer(serializers.HyperlinkedModelSerializer):
     review = serializers.HyperlinkedRelatedField(
         many=True, 
         read_only=True, 
-        view_name='review_detail'
+        view_name='user-detail'
     )
     class Meta:
         model = ProductReview

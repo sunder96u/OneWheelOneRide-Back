@@ -19,11 +19,11 @@ urlpatterns = [
     path('users/<int:pk>', views.UserDetail.as_view(), name='user_detail'),
     path('login', views.Login.as_view(), name='login'),
     path('register', views.UserCreate.as_view(), name='register'),
-    path('CreateComment', views.CreateComment.as_view(), name='user-detail'),
-    path('CreateTrailReview', views.CreateTrailReview.as_view(), name='user-detail'),
-    path('CreateProductReview', views.CreateProductReview.as_view(), name='user-detail'),
+    path('CreateComment', views.CreateComment.as_view(), name='create_comment'),
+    path('CreateTrailReview', views.CreateTrailReview.as_view(), name='create_trail_review'),
+    path('CreateProductReview', views.CreateProductReview.as_view(), name='create_product_review'),
     path('CreateGroup', views.CreateGroup.as_view(), name='create_group'),
-    path('CreateTrail', views.CreateTrail.as_view(), name='create_trail'),
+    path('CreateTrail', views.CreateTrail.as_view(), name='create_trail')
 
     
 
