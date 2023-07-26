@@ -7,7 +7,7 @@ class User(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
-    profile_picture = models.CharField(max_length=250)
+    profile_picture = models.CharField(max_length=250, default="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1VAWlUdnhzQgtyss_G-WaeDPGgj3XBQx95A&usqp=CAU")
 
     def __str__(self):
         return self.email
