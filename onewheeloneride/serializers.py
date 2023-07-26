@@ -70,6 +70,46 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ('id', 'name', 'description', 'picture', 'group')
 
+class UserIdSerializer(serializers.HyperlinkedModelSerializer):
+    user_id = serializers.HyperlinkedRelatedField(
+        many=True, 
+        read_only=True, 
+        view_name='user_detail'
+    )
+    class Meta:
+            model = User
+            fields = ('id', 'user_id')
+
+class ProductIdSerializer(serializers.HyperlinkedModelSerializer):
+    product_id = serializers.HyperlinkedRelatedField(
+        many=True, 
+        read_only=True, 
+        view_name='product_detail'
+    )
+    class Meta:
+        model = Product
+        fields = ('id', 'product_id')
+
+class TrailIdSerializer(serializers.HyperlinkedModelSerializer):
+    trail_id = serializers.HyperlinkedRelatedField(
+        many=True, 
+        read_only=True, 
+        view_name='trail_detail'
+    )
+    class Meta:
+        model = Trail
+        fields = ('id', 'trail_id')
+
+class GroupIdSerializer(serializers.HyperlinkedModelSerializer):
+    group_id = serializers.HyperlinkedRelatedField(
+        many=True, 
+        read_only=True, 
+        view_name='group_detail'
+    )
+    class Meta:
+            model = Group
+            fields = ('id', 'group_id')
+
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
     category_id = CategorySerializer()
     model_id = ModelSerializer()
@@ -78,22 +118,22 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'name', 'price', 'description', 'picture', 'category_id', 'model_id')
 
 class ProductReviewSerializer(serializers.HyperlinkedModelSerializer):
-    product_id = ProductSerializer()
-    user_id = UserSerializer()
+    product_id = ProductIdSerializer
+    user_id = UserIdSerializer
     class Meta:
         model = ProductReview
         fields = ('id', 'rating', 'review', 'user_id', 'product_id')
 
 class TrailReviewSerializer(serializers.HyperlinkedModelSerializer):
-    trail_id = TrailSerializer()
-    user_id = UserSerializer()
+    trail_id = TrailIdSerializer
+    user_id = UserIdSerializer
     class Meta:
         model = TrailReview
         fields = ('id', 'rating','review', 'user_id', 'trail_id')
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
-    group_id = GroupSerializer()
-    user_id = UserSerializer()
+    group_id = GroupIdSerializer()
+    user_id = UserIdSerializer()
     class Meta:
         model = Comment
         fields = ('id', 'date', 'comment', 'user_id', 'group_id')
