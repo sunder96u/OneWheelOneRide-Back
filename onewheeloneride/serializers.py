@@ -113,5 +113,3 @@ class ProductReviewSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ProductReview
         fields = ('id', 'rating', 'review', 'product')
-
-        
