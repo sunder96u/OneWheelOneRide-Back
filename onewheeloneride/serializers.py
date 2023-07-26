@@ -71,44 +71,44 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'name', 'description', 'picture', 'group')
 
 class UserIdSerializer(serializers.HyperlinkedModelSerializer):
-    user_id = serializers.HyperlinkedRelatedField(
+    user = serializers.HyperlinkedRelatedField(
         many=True, 
         read_only=True, 
         view_name='user_detail'
     )
     class Meta:
             model = User
-            fields = ('id')
+            fields = ('id', 'user')
 
 class ProductIdSerializer(serializers.HyperlinkedModelSerializer):
-    product_id = serializers.HyperlinkedRelatedField(
+    product = serializers.HyperlinkedRelatedField(
         many=True, 
         read_only=True, 
         view_name='product_detail'
     )
     class Meta:
         model = Product
-        fields = ('id')
+        fields = ('id' , 'product')
 
 class TrailIdSerializer(serializers.HyperlinkedModelSerializer):
-    trail_id = serializers.HyperlinkedRelatedField(
+    trail = serializers.HyperlinkedRelatedField(
         many=True, 
         read_only=True, 
         view_name='trail_detail'
     )
     class Meta:
         model = Trail
-        fields = ('id')
+        fields = ('id', 'trail')
 
 class GroupIdSerializer(serializers.HyperlinkedModelSerializer):
-    group_id = serializers.HyperlinkedRelatedField(
+    group = serializers.HyperlinkedRelatedField(
         many=True, 
         read_only=True, 
         view_name='group_detail'
     )
     class Meta:
             model = Group
-            fields = ('id')
+            fields = ('id', 'group')
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
     category_id = CategorySerializer()
