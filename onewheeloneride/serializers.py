@@ -61,14 +61,10 @@ class CartSerializer(serializers.HyperlinkedModelSerializer):
         fields = all
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    group = serializers.HyperlinkedRelatedField(
-        many=True, 
-        read_only=True, 
-        view_name='group_detail'
-    )
+    members = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), many=True)
     class Meta:
         model = Group
-        fields = ('id', 'name', 'description', 'picture', 'group')
+        fields = ('id', 'name', 'description', 'picture', 'members')
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
     category_id = CategorySerializer()
