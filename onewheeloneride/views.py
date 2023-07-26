@@ -36,6 +36,10 @@ class ProductReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = ProductReview.objects.all()
     serializer_class = ProductReviewSerializer
 
+class CreateProductReview(generics.CreateAPIView):
+    queryset = ProductReview.objects.all()
+    serializers_class = ProductReviewSerializer
+
 class Traillist(generics.ListAPIView):
     queryset = Trail.objects.all()
     serializer_class = TrailSerializer
@@ -52,6 +56,10 @@ class TrailReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = TrailReview.objects.all()
     serializer_class = TrailReviewSerializer
 
+class CreateTrailReview(generics.CreateAPIView):
+    queryset = TrailReview.objects.all()
+    serializer_class = TrailReviewSerializer
+
 class CartList(generics.ListAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
@@ -61,6 +69,10 @@ class CartDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CartSerializer
 
 class CommentList(generics.ListAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+class CreateComment(generics.CreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
@@ -75,6 +87,10 @@ class GroupList(generics.ListAPIView):
 class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class CreateGroup(generics.CreateAPIView):
+    queryset = Group.objects.all()
+    serializers_class = GroupSerializer
 
 # class UserLogin(generics.CreateAPIView):
 #     queryset = User.objects.all()

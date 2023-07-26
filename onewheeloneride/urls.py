@@ -13,11 +13,17 @@ urlpatterns = [
     path('productreviews/<int:pk>', views.ProductReviewDetail.as_view(), name='product_review'),
     path('trailreviews/<int:pk>', views.TrailReviewDetail.as_view(), name='trail_review'),
     path('carts/<int:pk>', views.CartDetail.as_view(), name='card_detail'),
+    path('comments', views.CommentList.as_view(), name='comment_list'),
     path('comments/<int:pk>', views.CommentDetail.as_view(), name='comment_detail'),
     path('users', views.UserList.as_view(), name='user_list'),
     path('users/<int:pk>', views.UserDetail.as_view(), name='user_detail'),
     path('login', views.Login.as_view(), name='login'),
-    path('register', views.UserCreate.as_view(), name='register')
+    path('register', views.UserCreate.as_view(), name='register'),
+    path('CreateComment', views.CreateComment.as_view(), name='create_comment'),
+    path('CreateTrailReview', views.CreateTrailReview.as_view(), name='create_trail_review'),
+    path('CreateProductReview', views.CreateProductReview.as_view(), name='create_product_review'),
+    path('CreateGroup', views.CreateGroup.as_view(), name='create_group'),
+
     
 
 ]
