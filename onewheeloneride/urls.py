@@ -22,4 +22,5 @@ urlpatterns = [
     path('createtrailreview', views.TrailReviewCreate.as_view(), name='trail_create'),
     path('createproductreview', views.ProductReviewCreate.as_view(), name='product_review)'),
     path('createcomment', views.CommentCreate.as_view(), name='comment_create'),
+    path('group', views.GroupMembers.as_view(), name='group_members'),
 ]

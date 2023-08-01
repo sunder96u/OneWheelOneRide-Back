@@ -86,5 +86,9 @@ class ProductReviewCreate(generics.CreateAPIView):
 class CommentCreate(generics.CreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+
+class GroupMembers(generics.ListAPIView):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
     
 
